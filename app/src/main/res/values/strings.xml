@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Gists</string>
+    <string name="btn_example">Go to example</string>
 </resources>
