@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Gists</string>
     <string name="btn_example">Go to example</string>
+    <string name="home_fragment_label">Home Fragment</string>
 </resources>
