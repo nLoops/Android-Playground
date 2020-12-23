@@ -18,13 +18,7 @@ import kotlinx.coroutines.launch
  * Created by Ahmed Ibrahim on 21,December,2020
  */
 abstract class PermissionActivity : BaseActivity() {
-    /**
-     * We have four cases
-     *
-     * User grant part of permissions
-     * User denied all permissions
-     * User mark part or all permissions to not ask again
-     */
+
     private var callBack: PermissionCallBack? = null
     private var message: Int? = null
 
@@ -79,17 +73,17 @@ abstract class PermissionActivity : BaseActivity() {
 
         when {
             shouldShowRationale -> showPermissionRationaleDialog(permissions)
-            shouldGoToAppSettings -> openAppSettings()
+            shouldGoToAppSettings -> showPermissionRationaleDialog(launchSettings = true)
             else -> requestPermissions(permissions)
         }
     }
 
-    private fun showPermissionRationaleDialog(permissions: Array<Permission>) {
+    private fun showPermissionRationaleDialog(permissions: Array<Permission> = emptyArray(), launchSettings: Boolean = false) {
         message?.let {
             showAlertDialog(title = getString(R.string.permission_title),
                     message = getString(it), positiveActionText = getString(R.string.button_ok),
                     negativeText = getString(android.R.string.cancel),
-                    positiveAction = { requestPermissions(permissions) },
+                    positiveAction = { if (launchSettings) openAppSettings() else requestPermissions(permissions) },
                     negativeAction = { lifecycleScope.launch { permissions.forEach { p -> preference.edit().putString(p.value, PermissionState.DENIED.name).apply() } } })
         }
     }
@@ -114,6 +108,7 @@ abstract class PermissionActivity : BaseActivity() {
                     lifecycleScope.launch { preference.edit().clear().apply() }
                 } else {
                     callBack?.onResultContainsDenied()
+                    permissions.forEach { s -> lifecycleScope.launch { preference.edit().putString(s, PermissionState.DENIED.name).apply() } }
                 }
                 return
             }

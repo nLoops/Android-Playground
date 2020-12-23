@@ -10,11 +10,10 @@ import androidx.viewbinding.ViewBinding
 /**
  * Created by Ahmed Ibrahim on 22,December,2020
  */
-abstract class TopFragment<VB : ViewBinding, VM : ViewModel> : BaseFragment() {
+abstract class BaseBindingFragment<VB : ViewBinding> : BaseFragment() {
     private var _binding: VB? = null
     protected val binding get() = _binding!!
 
-    protected abstract val viewModel: VM
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = getViewBinding(inflater, container)
