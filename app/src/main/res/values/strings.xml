@@ -3,4 +3,5 @@
     <string name="btn_example">Go to example</string>
     <string name="home_fragment_label">Home Fragment</string>
     <string name="button_ok">OK</string>
+    <string name="permission_title">Permissions Manager</string>
 </resources>

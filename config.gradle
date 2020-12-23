@@ -19,8 +19,11 @@ ext {
     def constraint_layout = '2.0.4'
 
     // Other
+
     // Material design
     def material_design = '1.2.1'
+    // Timber [Logging]
+    def timber = '4.7.1'
 
     // Test
     def junit = '4.13.1'
@@ -54,7 +57,8 @@ ext {
     libraries = [
             "androidx.appcompat:appcompat:$appcompat",
             "com.google.android.material:material:$material_design",
-            "androidx.constraintlayout:constraintlayout:$constraint_layout"
+            "androidx.constraintlayout:constraintlayout:$constraint_layout",
+            "com.jakewharton.timber:timber:$timber"
     ]
 
     // Array of test libraries

@@ -12,6 +12,7 @@ import co.eware.gists.base.fragment.BaseBindingFragment
 import co.eware.gists.base.fragment.BaseViewModelFragment
 import co.eware.gists.databinding.FragmentHomeBinding
 import co.eware.gists.utils.PermissionCallBack
+import timber.log.Timber
 import java.util.*
 
 /**
@@ -19,28 +20,14 @@ import java.util.*
  */
 class HomeFragment : BaseBindingFragment<FragmentHomeBinding>() {
 
-    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) = FragmentHomeBinding.inflate(inflater, container, false)
+    override fun getViewBinding(inflater: LayoutInflater, container: ViewGroup?) =
+        FragmentHomeBinding.inflate(inflater, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.run {
-            btnExample.setOnClickListener {
-                val callback = object : PermissionCallBack {
-                    override fun onPermissionGranted() {
-                        showSnackBar("Granted!")
-                    }
-
-                    override fun onResultContainsDenied() {
-                        showSnackBar("Denied!")
-                    }
-                }
-                val permissions = arrayOf(Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO)
-
-                if ((activity as TopAppActivity).checkPermission(permissions, callback, R.string.permission_required)) {
-                    showSnackBar("Already Granted!")
-                }
-            }
+            btnExample.setOnClickListener {}
         }
     }
 }
