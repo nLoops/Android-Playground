@@ -41,7 +41,13 @@ ext {
             "androidx.fragment:fragment-ktx:$fragment_ktx",
 
             // Lifecycle KTX
-            "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_ktx"
+            "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_ktx",
+
+            // Livedata KTX
+            "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_ktx",
+
+            // ViewModel KTX
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_ktx"
     ]
 
     // Array of rest and general libraries

@@ -1,9 +1,9 @@
 package co.eware.gists
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import co.eware.gists.base.activity.TopAppActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : TopAppActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
