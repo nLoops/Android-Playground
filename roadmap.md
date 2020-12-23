@@ -1,3 +1,7 @@
+#Guidelines
+- Branch naming guid **2 alpha** example (design patters) DP_01_title
+
+
 ##Below All features will be implemented
 ###Each feature will be separated by branch
 

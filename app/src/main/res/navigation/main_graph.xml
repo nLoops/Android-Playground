@@ -9,5 +9,14 @@
         android:id="@+id/home_fragment"
         android:name="co.eware.gists.base.HomeFragment"
         android:label="@string/home_fragment_label"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_fragment_to_observerFragment"
+            app:destination="@id/observerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/observerFragment"
+        android:name="co.eware.gists.categories.core.patterns.observer.ui.ObserverFragment"
+        android:label="ObserverFragment"
+        tools:layout="@layout/fragment_observer" />
 </navigation>
