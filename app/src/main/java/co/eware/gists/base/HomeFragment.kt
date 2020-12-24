@@ -1,19 +1,12 @@
 package co.eware.gists.base
 
-import android.Manifest
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import co.eware.gists.R
-import co.eware.gists.base.activity.TopAppActivity
+import androidx.navigation.fragment.findNavController
 import co.eware.gists.base.fragment.BaseBindingFragment
-import co.eware.gists.base.fragment.BaseViewModelFragment
 import co.eware.gists.databinding.FragmentHomeBinding
-import co.eware.gists.utils.PermissionCallBack
-import timber.log.Timber
-import java.util.*
 
 /**
  * Created by Ahmed Ibrahim on 21,December,2020
@@ -27,7 +20,10 @@ class HomeFragment : BaseBindingFragment<FragmentHomeBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.run {
-            btnExample.setOnClickListener {}
+            btnExample.setOnClickListener {
+                val action = HomeFragmentDirections.actionHomeFragmentToPermissionFragment()
+                findNavController().navigate(action)
+            }
         }
     }
 }
