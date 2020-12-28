@@ -7,16 +7,20 @@
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="co.eware.gists.base.HomeFragment"
+        android:name="co.eware.gists.base.home.HomeFragment"
         android:label="@string/home_fragment_label"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_home_fragment_to_observerFragment"
-            app:destination="@id/observerFragment" />
+            android:id="@+id/action_home_fragment_to_permissionFragment"
+            app:destination="@id/permissionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
-        android:id="@+id/observerFragment"
-        android:name="co.eware.gists.categories.core.patterns.observer.ui.ObserverFragment"
-        android:label="ObserverFragment"
-        tools:layout="@layout/fragment_observer" />
+        android:id="@+id/permissionFragment"
+        android:name="co.eware.gists.categories.ui.permissions.PermissionFragment"
+        android:label="PermissionFragment"
+        tools:layout="@layout/fragment_permissions" />
 </navigation>
