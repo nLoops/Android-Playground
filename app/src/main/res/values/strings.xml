@@ -6,4 +6,7 @@
     <string name="permission_title">Permissions Manager</string>
     <string name="permission_message">App required these permissions to function</string>
     <string name="button_request_permission">Request Permission</string>
+    <!-- LivePrefsFragment -->
+    <string name="button_increase">increase</string>
+    <string name="button_decrease">decrease</string>
 </resources>

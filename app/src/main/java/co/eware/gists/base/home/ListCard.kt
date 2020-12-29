@@ -13,5 +13,6 @@ data class ListCard(
 ) : BaseDataModel
 
 val featuresList = listOf(
-        ListCard("1", "Design Patterns", HomeFragmentDirections.actionHomeFragmentToPermissionFragment())
+        ListCard("1", "Design Patterns", HomeFragmentDirections.actionHomeFragmentToPermissionFragment()),
+        ListCard("2", "Live Data Fragment", HomeFragmentDirections.actionHomeFragmentToLivedatapref()),
 )

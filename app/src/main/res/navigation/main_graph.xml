@@ -17,10 +17,23 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_home_fragment_to_livedatapref"
+            app:destination="@id/livePrefsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/permissionFragment"
         android:name="co.eware.gists.categories.ui.permissions.PermissionFragment"
         android:label="PermissionFragment"
         tools:layout="@layout/fragment_permissions" />
+    <fragment
+        android:id="@+id/livePrefsFragment"
+        android:name="co.eware.gists.categories.utils.livedataprefs.ui.LivePrefsFragment"
+        android:label="LivePrefsFragment"
+        tools:layout="@layout/fragment_liveprefs_layout" />
 </navigation>
